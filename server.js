@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(cors());
 
 // MongoDB Connection
-mongoose.connect('mongodb://localhost:27017/mydatabase')
+mongoose.connect('mongodb://127.0.0.1:27017/mydatabase')
     .then(() => console.log('MongoDB Connected'))
     .catch(err => console.error('MongoDB Connection Error:', err));
 
@@ -34,6 +34,13 @@ app.get('/api/users', async (req, res) => {
     const users = await User.find();
     res.json(users);
 });
+
+app.get('/', async (req, res) => {
+    //const users = await User.find();
+    //res.json(users);
+    res.send("Hi....");
+});
+
 
 // Start Server
 app.listen(PORT, () => {
