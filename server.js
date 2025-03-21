@@ -8,7 +8,7 @@ const PORT = 5000;
 // Middleware
 app.use(express.json());
 app.use(cors());
-
+/*
 // MongoDB Connection
 mongoose.connect('mongodb://127.0.0.1:27017/mydatabase')
     .then(() => console.log('MongoDB Connected'))
@@ -34,7 +34,7 @@ app.get('/api/users', async (req, res) => {
     const users = await User.find();
     res.json(users);
 });
-
+*/
 app.get('/', async (req, res) => {
     //const users = await User.find();
     //res.json(users);
